@@ -10,6 +10,7 @@
     "test": "jest && standard"
   },
   "dependencies": {
+    "clubhouse-lib": "^0.2.1",
     "probot": "^3.0.0"
   },
   "devDependencies": {
