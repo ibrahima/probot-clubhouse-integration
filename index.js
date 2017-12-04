@@ -1,10 +1,15 @@
 module.exports = (robot) => {
-  // Your code here
-  console.log('Yay, the app was loaded!')
+  console.log('Yay, the app was loaded!');
 
-  // For more information on building apps:
-  // https://probot.github.io/docs/
+  robot.on('pull_request.labeled', async context => {
+    robot.log.info('Pull request labeled!');
+    const name = context.payload.label.name;
+    robot.log(name);
+  });
 
-  // To get your app running against GitHub, see:
-  // https://probot.github.io/docs/development/
-}
+  robot.on('pull_request.unlabeled', async context => {
+    robot.log.info('Pull request unlabeled!');
+    const name = context.payload.label.name;
+    robot.log(name);
+  });
+};
